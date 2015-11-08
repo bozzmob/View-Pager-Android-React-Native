@@ -13,13 +13,13 @@ var {
 } = React;
 
 var PAGES = 5;
-var BGCOLOR = ['#fdc08e', '#fff6b9', '#99d1b7', '#dde5fe', '#f79273'];
+var BGCOLOR = ['#F3F781', '#D8F781', '#CEF6F5', '#FE9A2E', '#E6E6E6'];
 var IMAGE_URIS = [
-  'http://apod.nasa.gov/apod/image/1410/20141008tleBaldridge001h990.jpg',
-  'http://apod.nasa.gov/apod/image/1409/volcanicpillar_vetter_960.jpg',
-  'http://apod.nasa.gov/apod/image/1409/m27_snyder_960.jpg',
-  'http://apod.nasa.gov/apod/image/1409/PupAmulti_rot0.jpg',
-  'http://apod.nasa.gov/apod/image/1510/lunareclipse_27Sep_beletskycrop4.jpg',
+  'https://lh4.ggpht.com/JJ5Q0-B7P52tQqaz9m7ZEq9cpIOCpDZqLccODNuOl3FOo_bbx5yfoDbFRVbfuJSFHHY=w300',
+  'https://lh3.googleusercontent.com/EkPYk0aq6xKrERKrde2jFChOh5S3wewzW-cKy1pck8YFu8ZIAx3kjsG45wZYi5-khUY=w300',
+  'https://lh3.googleusercontent.com/mkfH6NV_uISCI88anQnaDIy9upOqLSf-9LzQ7bqEgPSRqZ31OxjdJHOZIa4OXucE8w=w300',
+  'https://pbs.twimg.com/profile_images/518624830216626177/nP44m-lm.png',
+  'https://lh3.ggpht.com/RKLFoqtI43iNDEp8_xbCoHdHQnc_iUDH90kW_j2yH_x6U_PnL9jWQ4X4ZBhH0zxkgg=w300',
 ];
 
 var LikeCount = React.createClass({
@@ -121,14 +121,6 @@ var ViewPagerAndroidReactNative = React.createClass({
     var page = this.state.page;
     return (
       <View style={styles.container}>
-        <ViewPagerAndroid
-          style={styles.viewPager}
-          initialPage={0}
-          onPageScroll={this.onPageScroll}
-          onPageSelected={this.onPageSelected}
-          ref={viewPager => { this.viewPager = viewPager; }}>
-          {pages}
-        </ViewPagerAndroid>
         <View style={styles.buttons}>
           <Button text="Start" enabled={page > 0} onPress={() => this.go(0)}/>
           <Button text="Prev" enabled={page > 0} onPress={() => this.move(-1)}/>
@@ -137,6 +129,14 @@ var ViewPagerAndroidReactNative = React.createClass({
           <Button text="Next" enabled={page < PAGES - 1} onPress={() => this.move(1)}/>
           <Button text="Last" enabled={page < PAGES - 1} onPress={() => this.go(PAGES - 1)}/>
         </View>
+        <ViewPagerAndroid
+          style={styles.viewPager}
+          initialPage={0}
+          onPageScroll={this.onPageScroll}
+          onPageSelected={this.onPageSelected}
+          ref={viewPager => { this.viewPager = viewPager; }}>
+          {pages}
+        </ViewPagerAndroid>
       </View>
     );
   },
